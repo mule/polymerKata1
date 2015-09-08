@@ -20,12 +20,29 @@ var AuthenticationBar = (function (_super) {
     function AuthenticationBar() {
         _super.apply(this, arguments);
         this.greet = "Hello";
+        this.provider = "";
+        this.message = "";
+        this.email = "";
+        this.password = "";
+        this.user = null;
     }
     AuthenticationBar.prototype.greetChanged = function (newValue, oldValue) {
         console.log("greet has changed from " + oldValue + " to " + newValue);
     };
     AuthenticationBar.prototype.greetAll = function (test) {
         return this.greet + " to all";
+    };
+    AuthenticationBar.prototype.computeLoginStatus = function (statusKnown, user) {
+        if (statusKnown && user) {
+            return "Logged in";
+        }
+        if (statusKnown) {
+            return "Logged out";
+        }
+        return "Unknown status";
+    };
+    AuthenticationBar.prototype.computeLoginHidden = function (statusKnown, user) {
+        return !statusKnown || !!user;
     };
     AuthenticationBar.prototype.handleClick = function (e) {
         this.greet = "Holà";
@@ -44,6 +61,30 @@ var AuthenticationBar = (function (_super) {
         property({ type: String }), 
         __metadata('design:type', String)
     ], AuthenticationBar.prototype, "greet");
+    __decorate([
+        property({ type: String }), 
+        __metadata('design:type', String)
+    ], AuthenticationBar.prototype, "provider");
+    __decorate([
+        property({ type: String }), 
+        __metadata('design:type', String)
+    ], AuthenticationBar.prototype, "message");
+    __decorate([
+        property({ type: String }), 
+        __metadata('design:type', String)
+    ], AuthenticationBar.prototype, "email");
+    __decorate([
+        property({ type: String }), 
+        __metadata('design:type', String)
+    ], AuthenticationBar.prototype, "password");
+    __decorate([
+        property({ type: Object }), 
+        __metadata('design:type', Object)
+    ], AuthenticationBar.prototype, "user");
+    __decorate([
+        property({ type: Boolean }), 
+        __metadata('design:type', Boolean)
+    ], AuthenticationBar.prototype, "statusKnown");
     Object.defineProperty(AuthenticationBar.prototype, "greetChanged",
         __decorate([
             observe("greet"), 

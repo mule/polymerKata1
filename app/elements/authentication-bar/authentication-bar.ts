@@ -6,6 +6,25 @@ class AuthenticationBar extends polymer.Base
    @property({ type: String })
    greet: string = "Hello";
 
+   @property({ type: String })
+   provider: string = ""
+
+   @property({ type: String })
+   message: string = ""
+
+   @property({ type: String })
+   email: string = ""
+
+   @property({ type: String })
+   password: string = ""
+
+   @property({ type: Object })
+   user: Object = null
+
+   @property({ type: Boolean })
+   statusKnown: boolean
+
+
    @observe("greet")
    greetChanged(newValue:string, oldValue:string)
    {
@@ -16,6 +35,23 @@ class AuthenticationBar extends polymer.Base
    greetAll(test:string):string
    {
       return this.greet+" to all";
+   }
+
+   computeLoginStatus(statusKnown:Boolean,user:Object):string
+   {
+     if(statusKnown && user){
+       return "Logged in";
+     }
+
+     if(statusKnown){
+       return "Logged out";
+     }
+     return "Unknown status";
+   }
+
+   computeLoginHidden(statusKnown:boolean, user:Object){
+     return !statusKnown || !!user;
+
    }
 
    // event handler
