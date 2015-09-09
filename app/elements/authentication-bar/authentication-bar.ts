@@ -15,9 +15,6 @@ class AuthenticationBar extends polymer.Base
    @property({ type: String })
    email: string = ""
 
-   @property({ type: String })
-   password: string = ""
-
    @property({ type: Object })
    user: Object = null
 

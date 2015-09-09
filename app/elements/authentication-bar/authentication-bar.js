@@ -23,7 +23,6 @@ var AuthenticationBar = (function (_super) {
         this.provider = "";
         this.message = "";
         this.email = "";
-        this.password = "";
         this.user = null;
     }
     AuthenticationBar.prototype.greetChanged = function (newValue, oldValue) {
@@ -73,10 +72,6 @@ var AuthenticationBar = (function (_super) {
         property({ type: String }), 
         __metadata('design:type', String)
     ], AuthenticationBar.prototype, "email");
-    __decorate([
-        property({ type: String }), 
-        __metadata('design:type', String)
-    ], AuthenticationBar.prototype, "password");
     __decorate([
         property({ type: Object }), 
         __metadata('design:type', Object)
