@@ -23,7 +23,6 @@ var AuthenticationBar = (function (_super) {
         this.provider = "";
         this.message = "";
         this.email = "";
-        this.user = null;
     }
     AuthenticationBar.prototype.greetChanged = function (newValue, oldValue) {
         console.log("greet has changed from " + oldValue + " to " + newValue);
@@ -52,10 +51,13 @@ var AuthenticationBar = (function (_super) {
     };
     AuthenticationBar.prototype.ready = function () {
         console.log(this['is'], "ready!");
+        this.user = { email: 'jukka.puranen@gmail.com' };
     };
-    AuthenticationBar.prototype.created = function () { };
-    AuthenticationBar.prototype.attached = function () { };
-    AuthenticationBar.prototype.detached = function () { };
+    AuthenticationBar.prototype.created = function () { console.log(this['is'], "created!"); };
+    AuthenticationBar.prototype.attached = function () {
+        console.log(this['is'], "attached!");
+    };
+    AuthenticationBar.prototype.detached = function () { console.log(this['is'], "detachecd!"); };
     __decorate([
         property({ type: String }), 
         __metadata('design:type', String)

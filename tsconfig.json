@@ -20,6 +20,9 @@
         "!./node_modules/**/*"
     ],
     "files": [
-        "./authentication-bar.ts"
+        "./app/elements/authentication-bar/authentication-bar.ts",
+        "./app/scripts/polymerKataApp.ts",
+        "./bower_components/polymer-ts/polymer-ts.d.ts",
+        "./bower_components/polymer-ts/polymer-ts.ts"
     ]
 }

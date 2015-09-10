@@ -6,7 +6,6 @@ function Main(document:Document){
   var app = document.querySelector("#app");
   var firebaseLogin = document.querySelector("#firebaseLogin");
   
-
 }
 
 Main(document);

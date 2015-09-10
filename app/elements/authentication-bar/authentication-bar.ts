@@ -16,7 +16,7 @@ class AuthenticationBar extends polymer.Base
    email: string = ""
 
    @property({ type: Object })
-   user: Object = null
+   user: Object
 
    @property({ type: Boolean })
    statusKnown: boolean
@@ -69,11 +69,15 @@ class AuthenticationBar extends polymer.Base
    ready()
    {
      console.log( this['is'], "ready!")
+   this.user = {email:'jukka.puranen@gmail.com'}
    }
 
-   created() { }
-   attached() { }
-   detached() { }
+   created() { console.log(this['is'], "created!");}
+   attached() {
+     console.log(this['is'], "attached!");
+
+    }
+   detached() { console.log(this['is'], "detachecd!");}
 
 
 
