@@ -28,6 +28,13 @@ class AuthenticationBar extends polymer.Base
       console.log(`greet has changed from ${oldValue} to ${newValue}`);
    }
 
+   @observe("user")
+   userChanged(newValue:string, oldValue:string)
+   {
+     console.log(newValue);
+
+   }
+
    @computed()
    greetAll(test:string):string
    {
@@ -69,7 +76,7 @@ class AuthenticationBar extends polymer.Base
    ready()
    {
      console.log( this['is'], "ready!")
-   this.user = {email:'jukka.puranen@gmail.com'}
+
    }
 
    created() { console.log(this['is'], "created!");}

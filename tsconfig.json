@@ -21,7 +21,8 @@
     ],
     "files": [
         "./app/elements/authentication-bar/authentication-bar.ts",
-        "./app/scripts/polymerKataApp.ts",
+        "./app/elements/login-view/login-view.ts",
+        "./app/elements/polymerKata-app/polymerKata-app.ts",
         "./bower_components/polymer-ts/polymer-ts.d.ts",
         "./bower_components/polymer-ts/polymer-ts.ts"
     ]

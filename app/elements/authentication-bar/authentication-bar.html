@@ -7,7 +7,7 @@
     <div>
       <span>{{user.email}}</span>
       <span>{{computeLoginStatus(statusKnown, user)}}</span>
-      <paper-button  hidden$="{{computeLoginHidden(statusKnown, user)}}">Login</paper-button>
+      <a href="/login" hidden$="{{computeLoginHidden(statusKnown, user)}}">Login</a>
       <paper-button>Sign up</paper-button>
     </div>
   </template>

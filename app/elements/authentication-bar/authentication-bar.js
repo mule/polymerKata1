@@ -27,6 +27,9 @@ var AuthenticationBar = (function (_super) {
     AuthenticationBar.prototype.greetChanged = function (newValue, oldValue) {
         console.log("greet has changed from " + oldValue + " to " + newValue);
     };
+    AuthenticationBar.prototype.userChanged = function (newValue, oldValue) {
+        console.log(newValue);
+    };
     AuthenticationBar.prototype.greetAll = function (test) {
         return this.greet + " to all";
     };
@@ -51,7 +54,6 @@ var AuthenticationBar = (function (_super) {
     };
     AuthenticationBar.prototype.ready = function () {
         console.log(this['is'], "ready!");
-        this.user = { email: 'jukka.puranen@gmail.com' };
     };
     AuthenticationBar.prototype.created = function () { console.log(this['is'], "created!"); };
     AuthenticationBar.prototype.attached = function () {
@@ -89,6 +91,13 @@ var AuthenticationBar = (function (_super) {
             __metadata('design:paramtypes', [String, String]), 
             __metadata('design:returntype', void 0)
         ], AuthenticationBar.prototype, "greetChanged", Object.getOwnPropertyDescriptor(AuthenticationBar.prototype, "greetChanged")));
+    Object.defineProperty(AuthenticationBar.prototype, "userChanged",
+        __decorate([
+            observe("user"), 
+            __metadata('design:type', Function), 
+            __metadata('design:paramtypes', [String, String]), 
+            __metadata('design:returntype', void 0)
+        ], AuthenticationBar.prototype, "userChanged", Object.getOwnPropertyDescriptor(AuthenticationBar.prototype, "userChanged")));
     Object.defineProperty(AuthenticationBar.prototype, "greetAll",
         __decorate([
             computed(), 
