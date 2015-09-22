@@ -38,8 +38,9 @@ var PolymerKataApp = (function (_super) {
         console.log('event "greet-event" received');
     };
     PolymerKataApp.prototype.onLoginRequest = function (e) {
-        console.log("Login requested");
-        this.$.firebaseLogin.provider = "google";
+        var provider = e.detail.provider;
+        console.log("Login requested for provider: " + e.detail.provider);
+        this.$.firebaseLogin.provider = provider;
         this.$.firebaseLogin.login();
     };
     PolymerKataApp.prototype.ready = function () {
@@ -81,7 +82,7 @@ var PolymerKataApp = (function (_super) {
         __decorate([
             listen("loginRequest"), 
             __metadata('design:type', Function), 
-            __metadata('design:paramtypes', [Event]), 
+            __metadata('design:paramtypes', [CustomEvent]), 
             __metadata('design:returntype', void 0)
         ], PolymerKataApp.prototype, "onLoginRequest", Object.getOwnPropertyDescriptor(PolymerKataApp.prototype, "onLoginRequest")));
     PolymerKataApp = __decorate([

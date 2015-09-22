@@ -40,9 +40,11 @@ class PolymerKataApp extends polymer.Base
    }
 
    @listen("loginRequest")
-    onLoginRequest(e:Event){
-      console.log("Login requested");
-      this.$.firebaseLogin.provider = "google"
+    onLoginRequest(e:CustomEvent){
+      var provider = e.detail.provider;
+      console.log("Login requested for provider: " + e.detail.provider);
+
+      this.$.firebaseLogin.provider = provider;
       this.$.firebaseLogin.login();
     }
    // lifecycle methods

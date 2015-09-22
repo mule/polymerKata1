@@ -21,7 +21,7 @@ class LoginView extends polymer.Base
 
    googleButtonClick(e:Event){
 
-     this.fire("loginRequest");
+     this.fire("loginRequest", {provider: 'google'});
    }
 
 

@@ -28,7 +28,7 @@ var LoginView = (function (_super) {
         return "hello to all";
     };
     LoginView.prototype.googleButtonClick = function (e) {
-        this.fire("loginRequest");
+        this.fire("loginRequest", { provider: 'google' });
     };
     LoginView.prototype.handleClick = function (e) {
         this.greet = "Holà";
